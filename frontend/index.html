@@ -19,63 +19,102 @@
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
-    myTrakr
-    <main>
-      <form action="">
-        New Account:
-        <input type="text" />
-        <button>Add new account</button>
-      </form>
-      <form action="">
-        New Transaction: Deposit
-        <input type="radio" />
-        Withdraw
-        <input type="radio" />
-        Transfer
-        <input type="radio" />
-        Account:
-        <select></select>
+    <section class="page">
+      <h1>myTrakr</h1>
+      <section class="newAccount">
+        <form id="addNewAccount" action="">
+          <div class="formAddAccount">
+            <label>New Account:</label>
+            <input type="text" id="newAccount" class="inputTxt"/>
+            <button>Add new account</button>
+          </div>
+        </form>
+      </section>
+      <main>
+        <form id="addTransaction" action="">
+          <div class="title"><h3>New Transaction:</h3></div>
+          <div class="divTransType">
+            <div class="radioItem">
+              <input type="radio" name="transactionType" class="transactionType" value="deposit" id="deposit" required/>
+              <label for="deposit" class="labelT">Deposit</label>
+            </div>
+            <div class="radioItem">
+              <input type="radio" name="transactionType" class="transactionType" value="withdraw" id="withdraw" />
+              <label for="withdraw" class="labelT">Withdraw</label>
+            </div>
+            <div class="radioItem">
+              <input type="radio" name="transactionType" class="transactionType" value="transfer" id="transfer" />
+              <label for="transfer" class="labelT">Transfer</label>
+            </div>
+          </div>
+          <div class="divAccounts" id="divAccountSingle">
+            <div class="divAccountsInd">
+              <label id="accountSelectLbl">Account:</label>
+              <select id="accountSelect" class="account"></select>
+            </div>
+            <!-- <div class="divAccountsInd"></div> -->
+          </div>
+          <div class="divAccounts" id="divAccountTransfer">
+            <div class="divAccountsInd">
+              <label id="accountFromLbl">From:</label>
+              <select id="accountFrom" class="account"></select>
+            </div>
+            <div class="divAccountsInd">
+              <label id="accountToLbl">To:</label>
+              <select id="accountTo" class="account"></select>
+            </div>
+          </div>
+          <div class="divCategory">
+            Category:
+            <select id="category">
+              <option value=""></option>
+              <option value="new">- NEW CATEGORY -</option>
+            </select>
+          </div>
+          <div class="divNewCategory">
+            <input type="text" class="newCategory" id="newCategory" />
+            <button type="button" class="newCategory" id="newCategoryBtn">Add new category</button>
+          </div>
+          <div class="divDesc">
+            Description:
+            <input id="description" type="text" />
+          </div>
+          <div class="divDesc">
+            Amount:
+            <input id="amount" type="number" />
+          </div>
 
-        From:
-        <select></select>
+          <div class="divDesc"><button>Add transaction</button></div>
+        </form>
 
-        To:
-        <select></select>
-        Category:
-        <select></select>
-        <input type="text" />
-        <button type="button">Add new category</button>
-
-        Description
-        <input type="text" />
-
-        Amount:
-        <input type="number" />
-
-        <button>Add transaction</button>
-      </form>
-
-      Account summary
-      <ul></ul>
-      Filter by account:
-      <select></select>
-      <table>
-        <tr>
-          <th>Id</th>
-          <th>Username</th>
-          <th>Transaction Type</th>
-          <th>Category</th>
-          <th>Description</th>
-          <th>Amount</th>
-          <th>From</th>
-          <th>To</th>
-        </tr>
-      </table>
-    </main>
-    <script src="./js/helpers/Account.js"></script>
-    <script src="./js/helpers/Category.js"></script>
+        <div class="title"><h3>Account summary</h3></div>
+        <div class="divSummary"><ul id="accountsSummary"></ul></div>
+        <div class="title">
+          <h3>Filter by account:</h3>
+        </div>
+        <div class="divFilterAccount">
+          <select id="accountsFilter" class="account"></select>
+        </div>
+        <div class="divTable">
+          <table class="transactionsTable table table-striped">
+            <tr>
+              <th>Id</th>
+              <th>Username</th>
+              <th>Transaction Type</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Amount</th>
+              <th>From</th>
+              <th>To</th>
+            </tr>
+          </table>
+        </div>
+      </main>
+    </section>
+    <script type="module" src="./js/helpers/Account.js"></script>
+    <script type="module" src="./js/helpers/Category.js"></script>
     <script src="./js/helpers/Common.js"></script>
-    <script src="./js/helpers/Transaction.js"></script>
-    <script src="./js/index.js"></script>
+    <script type="module" src="./js/helpers/Transaction.js"></script>
+    <script type="module" src="./js/index.js"></script>
   </body>
 </html>
