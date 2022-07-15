@@ -36,6 +36,7 @@ export const addNewCategory = function ()  {
       categoriesArray.push(data);
       fillSelectCat(data);
       $('.newCategory').hide();
+      $('#newCategory').val("");
    });
 
 }

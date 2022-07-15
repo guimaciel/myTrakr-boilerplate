@@ -58,6 +58,7 @@ export const addNewAccount = function () {
     accountsArray.push(data);
     fillSelectAcct(data);
     fillAccountSummary();
+    $('#newAccount').val("");
   });
 
 }
