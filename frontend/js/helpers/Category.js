@@ -21,6 +21,15 @@ export const addNewCategory = function ()  {
       alert("Please insert value for new category!")
       return;
    }
+   // Validate if input username already exists
+  const catNameArr = [];
+  categoriesArray.forEach((element) => {
+    catNameArr.push(element.name);
+  })
+  if (catNameArr.includes(newCat)) {
+    alert("This category already exists!");
+    return;
+  }
    
    // Every new category added, it should be sent to save in the server using Ajax.
    let newCatObj = { newCategory: newCat, };
